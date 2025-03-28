@@ -1,0 +1,91 @@
+{
+  "contactLinks": [
+    {
+      "description": "",
+      "title": "GitHub",
+      "url": "https://github.com/twittyc"
+    },
+    {
+      "description": "",
+      "title": "Matrix",
+      "url": "https://matrix.to/#/@twitty:matrix.org"
+    },
+    {
+      "description": "",
+      "title": "LinkedIn",
+      "url": "https://www.linkedin.com/in/cory-twitty-58b24969/"
+    }
+  ],
+  "jobHistory": [
+    {
+      "company": {
+        "defunct": false,
+        "location": {
+          "city": "San Diego",
+          "country": "USA",
+          "remote": true,
+          "stateOrProvince": "CA"
+        },
+        "name": "Virgo Surgical Video Solutions",
+        "url": "https://virgosvs.com"
+      },
+      "contract": false,
+      "endDate": "2024-01-01",
+      "hideFromResume": false,
+      "highlights": [
+        "Developed and maintained a CI/CD pipeline for a microservices architecture",
+        "Implemented monitoring and alerting for the application",
+        "Managed the deployment of the application to multiple environments",
+        "Developed and maintained a CI/CD pipeline for a microservices architecture",
+        "Implemented monitoring and alerting for the application",
+        "Managed the deployment of the application to multiple environments"
+      ],
+      "leaveReason": "Mass Layoffs",
+      "locations": [
+        {
+          "city": "San Diego",
+          "country": "USA",
+          "remote": true,
+          "stateOrProvince": "CA"
+        }
+      ],
+      "startDate": "2024-01-01",
+      "title": "Senior DevOps Engineer"
+    }
+  ],
+  "notableContributions": [
+    {
+      "description": "Contributed to the Terraform source code",
+      "title": "Terraform Source Contributor",
+      "url": "https://github.com/hashicorp/terraform/pull/31318"
+    }
+  ],
+  "resume": {
+    "buzzwords": [
+      "Rust",
+      "Git",
+      "Go",
+      "Python",
+      "Dhall",
+      "DevOps",
+      "Cloud",
+      "CI/CD",
+      "Kubernetes",
+      "Vim",
+      "TypeScript",
+      "Terraform",
+      "PostgreSQL",
+      "Continuous Integration",
+      "Continuous Delivery"
+    ],
+    "location": {
+      "city": "",
+      "country": "US",
+      "remote": true,
+      "stateOrProvince": ""
+    },
+    "name": "Cory Twitty",
+    "notableContributions": [],
+    "tagline": "Senior Site Reliability Engineer"
+  }
+}
