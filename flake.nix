@@ -46,7 +46,7 @@
             ${pkgs.dhall}/bin/dhall text --file $src/dhall/latex/resume.dhall > resume.tex
             
             # Copy LaTeX class file
-            cp $src/dhall/latex/resume.cls .
+            cp $src/dhall/latex/developercv.cls .
             
             # Compile LaTeX to PDF
             for i in 1 2 3; do
