@@ -12,6 +12,7 @@ in  { Type =
         , daysBetween : Optional Natural
         , leaveReason : Optional Text
         , locations : List Location.Type
+        , summary: Text
         , highlights : List Text
         , hideFromResume : Bool
         }
@@ -25,6 +26,7 @@ in  { Type =
       , daysBetween = None Natural
       , leaveReason = None Text
       , locations = [] : List Location.Type
+      , summary = ""
       , highlights = [] : List Text
       , hideFromResume = False
       }

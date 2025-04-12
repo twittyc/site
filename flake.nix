@@ -88,6 +88,7 @@
             # Cabal
             haskellPackages.cabal-install
             ghc
+            zlib
 
             # LaTeX
             texlive

@@ -20,27 +20,32 @@ in Resume::{
   }
   , buzzwords = [
     , Buzzword::{ name = "Rust", rating = 65 }
-    , Buzzword::{ name = "Git", rating = 70 }
+    , Buzzword::{ name = "PostgreSQL", rating = 65 }
+    , Buzzword::{ name = "TypeScript", rating = 70 }
     , Buzzword::{ name = "Go", rating = 70 }
     , Buzzword::{ name = "Python", rating = 70 }
+    , Buzzword::{ name = "Git", rating = 80 }
     , Buzzword::{ name = "Dhall", rating = 80 }
-    , Buzzword::{ name = "DevOps", rating = 100 }
+    , Buzzword::{ name = "Nix", rating = 80 }
     , Buzzword::{ name = "Cloud", rating = 90 }
-    , Buzzword::{ name = "CI/CD", rating = 100 }
     , Buzzword::{ name = "Kubernetes", rating = 90 }
-    , Buzzword::{ name = "Vim", rating = 80 }
-    , Buzzword::{ name = "TypeScript", rating = 70 }
+    , Buzzword::{ name = "CI/CD", rating = 100 }
     , Buzzword::{ name = "Terraform", rating = 100 }
-    , Buzzword::{ name = "PostgreSQL", rating = 65 }
+    , Buzzword::{ name = "DevOps", rating = 100 }
     , Buzzword::{ name = "Continuous Integration", rating = 100 }
     , Buzzword::{ name = "Continuous Delivery", rating = 100 }
   ]
   , jobs = jobHistory
   , notableContributions = [
-    Link::{
-      , url = "https://github.com/hashicorp/terraform/pull/31318"
-      , title = "Terraform Source Contributor"
-      , description = "Contributed to the Terraform source code"
-    }
+      Link:: {
+          , url = "https://github.com/hashicorp/terraform/pull/31318"
+          , title = "Github/hashicorp/terraform"
+          , description = "Contributed to the Terraform source code"
+      }
+      , Link:: {
+        , url = "https://github.com/williamkray/maubot-gifme/pull/13/files"
+        , title = "Github/williamkray/maubot-gifme"
+        , description = "Contributed to a popular maubot gif plugin for matrix"
+      }
   ]
 }
