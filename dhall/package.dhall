@@ -15,10 +15,13 @@ in  Config::{
       ]
     , contactLinks =
       [ Link::{ url = "https://github.com/twittyc", title = "GitHub" }
-      , Link::{ url = "https://matrix.to/#/@twitty:matrix.org", title = "Matrix" }
       , Link::{
         , url = "https://www.linkedin.com/in/cory-twitty-58b24969/"
         , title = "LinkedIn"
+        }
+      , Link::{
+        , url = "https://matrix.to/#/@twittyc:matrix.org"
+        , title = "Matrix"
         }
       ]
     , resume = ./resume.dhall

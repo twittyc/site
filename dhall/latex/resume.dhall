@@ -12,6 +12,8 @@ let cory = ../authors/cory.dhall
 
 let resume = ../resume.dhall
 
+let package = ../package.dhall
+
 let Buzzword = ../types/Buzzword.dhall
 
 let buzzwords =
@@ -37,7 +39,7 @@ let jobHistory =
     let workedLocs =
         \(j : Job.Type) ->
             let doer =
-                \(l : Location.Type) -> "\\item Work location: ${showLoc l}"
+                \(l : Location.Type) -> "\\item ${showLoc l}"
             
             in Prelude.Text.concatMapSep "\n" Location.Type doer j.locations
 
@@ -49,14 +51,13 @@ let jobHistory =
     
     let doer = 
         \(job : Job.Type) ->
-          ''
-          \entry{${showDate job}}{${job.company.name}}{${job.title}}{
-          \begin{itemize}
-          ${workedLocs job}
-          ${highlights job}
-          \end{itemize}
-          }
-          ''
+        ''
+        \entry{${showDate job}}{${job.company.name}${workedLocs job}}{${job.title}}{
+        \begin{itemize}
+        ${highlights job}
+        \end{itemize}
+        }
+        ''
 
     in Prelude.Text.concatMapSep "\n" Job.Type doer resume.jobs
 
@@ -64,9 +65,9 @@ let contributions =
     let doer =
         \(link : Link.Type) ->
             ''
-            \begin{rSubsection}{\href{${link.url}}{${link.title}}}{}{}{}
-              \item ${link.description}
-            \end{rSubsection}
+            \entry{}{${link.title}}{}{\begin{itemize}
+                \item \href{${link.url}}{${link.description}}
+            \end{itemize}}
             ''
     in
       Prelude.Text.concatMapSep "\n" Link.Type doer resume.notableContributions
@@ -85,16 +86,37 @@ let escapeLatex =
           (replace "}" "\\}"
           text))))))
 
--- Unwrap the optional values
-let processedData = 
-    { phone = Prelude.Optional.default Text "Phone unavailable" cory.phone
-    , email = Prelude.Optional.default Text "email@example.com" cory.email
-    , website = Prelude.Optional.default Text "example.com" cory.url
-    , github = Prelude.Optional.default Text "github.com/username" cory.github
-    , matrix = 
-        let rawMatrix = Prelude.Optional.default Text "username" cory.matrix
-        in escapeLatex rawMatrix
-    }
+let T = < GITHUB | LINKEDIN | MATRIX | OTHER >
+
+let handlers =
+    { GITHUB = False, LINKEDIN = False, MATRIX = False, OTHER = False }
+
+let isGithub = \(t : T) -> merge (handlers // { GITHUB = True }) t
+
+let isLinkedIn = \(t : T) -> merge (handlers // { LINKEDIN = True }) t
+
+let isMatrix = \(t : T) -> merge (handlers // { MATRIX = True }) t
+
+let isOther = \(t : T) -> merge (handlers // { OTHER = True }) t
+
+let makeEquals
+    : forall (a : Type) -> List (a -> Bool) -> a -> a -> Bool
+    =     \(a : Type)
+      ->  \(predicates : List (a -> Bool))
+      ->  \(l : a)
+      ->  \(r : a)
+      ->  let apply = \(predicate : a -> Bool) -> predicate l && predicate r
+
+          in  Prelude.Bool.or
+                (Prelude.List.map (a -> Bool) Bool apply predicates)
+let T/equals
+    : T -> T -> Bool
+    = makeEquals T [ isGithub, isLinkedIn, isMatrix, isOther ]
+
+let github = assert : T/equals T.GITHUB T.GITHUB === True
+
+let email = "cory@twitty.dev"
+
 
 in ''
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -142,17 +164,17 @@ in ''
 \begin{minipage}[t]{0.27\textwidth}
 	\vspace{-\baselineskip}
 	
-	\icon{MapMarker}{12}{${resume.location.city}, ${resume.location.stateOrProvince}}\\
-	\icon{Phone}{12}{${processedData.phone}}\\
-	\icon{At}{12}{\href{mailto:${processedData.email}}{${processedData.email}}}\\
+    \icon{MapMarker}{12}{${resume.location.city}, ${resume.location.stateOrProvince}}\\
+    \icon{At}{12}{\href{mailto:${email}}{${email}}}\\
+    \icon{Comment}{12}{\href{${email}}{${email}}}\\
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.27\textwidth}
 	\vspace{-\baselineskip}
 	
-	\icon{Globe}{12}{\href{${processedData.website}}{${processedData.website}}}\\
-	\icon{Github}{12}{\href{${processedData.github}}{${processedData.github}}}\\
-	\icon{Globe}{12}{\href{${processedData.matrix}}{${processedData.matrix}}}\\
+	\icon{Globe}{12}{\href{${email}}{${email}}}\\
+	\icon{Github}{12}{\href{${github.url}}{${github.title}}}\\
+	\icon{Linkedin}{12}{\href{${email}}{${email}}}\\
 \end{minipage}
 
 \vspace{0.5cm}

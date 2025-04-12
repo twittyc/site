@@ -82,7 +82,12 @@
             # Dhall
             dhall
             dhall-json
+            dhall-lsp-server
             jq
+
+            # Cabal
+            haskellPackages.cabal-install
+            ghc
 
             # LaTeX
             texlive
