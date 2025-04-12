@@ -1,4 +1,4 @@
-let site = ./types/package.dhall
+let site = ../types/package.dhall
 
 let Resume = site.Resume
 
@@ -8,7 +8,7 @@ let Buzzword = site.Buzzword
 
 let jobHistory = ./jobHistory.dhall
 
-let Location = ./types/Location.dhall
+let Location = ../types/Location.dhall
 
 in Resume::{
   , name = "Cory Twitty"

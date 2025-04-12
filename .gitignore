@@ -1,7 +1,6 @@
 result
-
 .env
-
 .env.local
-
-result
+site/public/data
+node_modules
+.astro

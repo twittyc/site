@@ -8,9 +8,9 @@ let Job = site.Job
 
 let Prelude = ../Prelude.dhall
 
-let cory = ../authors/cory.dhall
+let cory = ../data/cory.dhall
 
-let resume = ../resume.dhall
+let resume = ../data/resume.dhall
 
 let Buzzword = ../types/Buzzword.dhall
 

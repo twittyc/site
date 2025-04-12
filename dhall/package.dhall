@@ -5,7 +5,7 @@ let Config = site.Config
 let Link = site.Link
 
 in  Config::{
-    , jobHistory = ./jobHistory.dhall
+    , jobHistory = ./data/jobHistory.dhall
     , notableContributions =
       [ Link:: {
           , url = "https://github.com/hashicorp/terraform/pull/31318"
@@ -24,5 +24,5 @@ in  Config::{
         , title = "Matrix"
         }
       ]
-    , resume = ./resume.dhall
+    , resume = ./data/resume.dhall
     }

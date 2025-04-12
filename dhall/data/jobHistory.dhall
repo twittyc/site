@@ -1,4 +1,4 @@
-let site = ./types/package.dhall
+let site = ../types/package.dhall
 
 let Job = site.Job
 
