@@ -1,12 +1,21 @@
 ---
 import site from '../../public/data/site.json';
-import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
 import Summary from '../components/Summary.astro';
 import Experience from '../components/Experience.astro';
 ---
-<BaseLayout>
-  <Hero name={site.name} title={site.title} headshot={site.headshot} />
-  <Summary summary={site.summary} />
-  <Experience jobHistory={site.jobHistory} />
-</BaseLayout>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{site.name}</title>
+  </head>
+  <body class="font-sans bg-gray-50 text-gray-900">
+    <main class="max-w-3xl mx-auto px-4 py-8">
+      <Hero name={site.name} title={site.title} headshot={site.headshot} />
+      <Summary summary={site.summary} />
+      <Experience jobHistory={site.jobHistory} />
+    </main>
+  </body>
+</html>

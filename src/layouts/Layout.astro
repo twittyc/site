@@ -1,16 +1,15 @@
----
-const { children } = Astro.props;
----
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cory Twitty</title>
+    <title>{site.name}</title>
   </head>
   <body class="font-sans bg-gray-50 text-gray-900">
     <main class="max-w-3xl mx-auto px-4 py-8">
-      {children}
+      <Hero name={site.name} title={site.title} headshot={site.headshot} />
+      <Summary summary={site.summary} />
+      <Experience jobHistory={site.jobHistory} />
     </main>
   </body>
 </html>
