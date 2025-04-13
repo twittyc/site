@@ -3,13 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{site.name}</title>
+    <title>Cory Twitty</title>
   </head>
-  <body class="font-sans bg-gray-50 text-gray-900">
-    <main class="max-w-3xl mx-auto px-4 py-8">
-      <Hero name={site.name} title={site.title} headshot={site.headshot} />
-      <Summary summary={site.summary} />
-      <Experience jobHistory={site.jobHistory} />
-    </main>
+  <body class="scroll-smooth overflow-hidden font-sans bg-gray-50 text-gray-900">
+    <slot />
   </body>
 </html>
+
+<script type="module">
+  import { fadeSectionsByScroll } from '/src/scripts/fadeSectionsByScroll.js';
+  import { enableFullPageScroll } from '/src/scripts/fullPageScroller.js';
+  import { fadeInOnScroll } from '/src/scripts/fadeInOnScroll.js';
+  import { enableArrowKeyNavigation } from '/src/scripts/arrowNavigation.js';
+
+  requestAnimationFrame(() => {
+    fadeSectionsByScroll();              // handles scroll fade
+    enableFullPageScroll();              // lock scroll to section
+    fadeInOnScroll('[data-job]');        // job-by-job scroll fade
+    enableArrowKeyNavigation();          // handles up/down key scroll
+  });
+</script>
