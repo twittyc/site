@@ -5,42 +5,68 @@ import resumeJson from './resume.json';
 
 // --- TypeScript Interfaces ---
 
-export interface Location {
+interface Buzzword {
+  name: string;
+  rating: number;
+}
+
+interface Location {
   city: string;
-  stateOrProvince: string;
   country: string;
   remote: boolean;
+  stateOrProvince: string;
 }
 
-export interface Company {
-  name: string;
+interface Company {
   defunct: boolean;
-  url?: string;
   location: Location;
+  name: string;
+  url?: string;
+  image?: string;  // Full URL to company logo/image
 }
 
-export interface JobHistoryEntry {
+interface Job {
   company: Company;
   contract: boolean;
-  daysBetween?: number;
-  daysWorked?: number;
-  endDate?: string;
+  endDate: string;
   hideFromResume: boolean;
   highlights: string[];
-  leaveReason?: string;
+  leaveReason: string;
   locations: Location[];
   startDate: string;
   summary: string;
   title: string;
 }
 
-export interface ResumeData {
-  headshot?: string;
-  jobHistory: JobHistoryEntry[];
-  name: string;
-  summary: string;
-  title?: string;
+interface NotableContribution {
+  description: string;
+  title: string;
+  url: string;
 }
 
-// Cast the imported JSON to our ResumeData type
-export const resumeData: ResumeData = resumeJson as ResumeData;
+export interface ResumeData {
+  buzzwords: Buzzword[];
+  jobs: Job[];
+  name: string;
+  notableContributions: NotableContribution[];
+  headshot: string;
+  summary: string;
+  title: string;
+  location?: Location;
+}
+
+// Transform the JSON data to match our interface
+const transformData = (data: any): ResumeData => {
+  return {
+    buzzwords: data.buzzwords,
+    jobs: data.jobs,
+    name: data.name,
+    notableContributions: data.notableContributions,
+    headshot: data.headshot,
+    summary: data.summary,
+    title: data.title,
+    location: data.location
+  };
+};
+
+export const resumeData: ResumeData = transformData(resumeJson);

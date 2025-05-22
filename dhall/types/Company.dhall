@@ -5,11 +5,13 @@ in  { Type =
         , url : Optional Text
         , location : Location.Type
         , defunct : Bool
+        , image : Optional Text
         }
     , default =
       { name = ""
       , url = None Text
       , location = Location::{=}
       , defunct = False
+      , image = None Text
       }
     }

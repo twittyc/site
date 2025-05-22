@@ -1,4 +1,3 @@
-
 import { ResumeData } from "../data/resumeData";
 import { useEffect, useState } from "react";
 import { ChevronDown } from "lucide-react";
@@ -21,41 +20,24 @@ const HeroSection = ({ data }: HeroSectionProps) => {
       
       <div className="container mx-auto px-4 relative z-10">
         <div className={`text-center transition-all duration-1000 ${visible ? "opacity-100 transform translate-y-0" : "opacity-0 transform translate-y-10"}`}>
-          <div className="w-40 h-40 mx-auto mb-8 rounded-full overflow-hidden border-4 border-white shadow-lg">
-            <img 
-              src={data.basics.image} 
-              alt={data.basics.name} 
-              className="w-full h-full object-cover"
-            />
+          <div className="mb-8 flex justify-center">
+            <div className="relative w-48 h-48 rounded-full overflow-hidden border-4 border-primary">
+              <img
+                src={data.headshot}
+                alt={`${data.name}'s headshot`}
+                className="w-full h-full object-cover"
+              />
+            </div>
           </div>
-          
-          <h1 className="apple-heading text-5xl md:text-7xl lg:text-8xl mb-4">{data.basics.name}</h1>
+          <h1 className="apple-heading text-5xl md:text-7xl lg:text-8xl mb-4">{data.name}</h1>
           
           <div className="h-px w-24 bg-primary mx-auto my-6"></div>
           
-          <h2 className="apple-subheading text-2xl md:text-3xl text-gray-600 mb-6">{data.basics.label}</h2>
+          <h2 className="apple-subheading text-2xl md:text-3xl text-gray-600 mb-6">{data.title}</h2>
           
           <p className="apple-text max-w-2xl mx-auto text-gray-600 mb-12">
-            {data.basics.summary}
+            {data.summary}
           </p>
-          
-          <div className="flex justify-center space-x-4 mb-16">
-            {data.basics.profiles.map((profile, index) => (
-              <a 
-                key={index}
-                href={profile.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-white p-3 rounded-full shadow-md hover:shadow-lg transition-all transform hover:scale-110"
-              >
-                <div className="w-6 h-6 flex items-center justify-center text-primary">
-                  {profile.network === "LinkedIn" && "in"}
-                  {profile.network === "GitHub" && "GH"}
-                  {profile.network === "Twitter" && "X"}
-                </div>
-              </a>
-            ))}
-          </div>
           
           <Button 
             variant="outline"

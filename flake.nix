@@ -1,5 +1,5 @@
 {
-  description = "Personal website with Next.js, Nix, and Dhall";
+  description = "Personal website with Vite, Nix, and Dhall";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -26,7 +26,7 @@
             raleway;
         };
 
-        # Resume generation derivation - now using direct Dhall to LaTeX
+        # Resume generation derivation
         resume = pkgs.stdenv.mkDerivation {
           name = "resume";
           src = ./.;
@@ -99,6 +99,7 @@
           ];
 
           shellHook = ''
+            npm install
             echo "🚀 Development environment loaded!"
             echo "Run 'npm run dev' to start the development server"
             echo "Run 'nix build .#resume' to generate your resume PDF"

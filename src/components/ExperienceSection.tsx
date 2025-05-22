@@ -1,4 +1,3 @@
-
 import { ResumeData } from "../data/resumeData";
 import { useEffect, useRef } from "react";
 
@@ -38,9 +37,9 @@ const ExperienceSection = ({ data }: ExperienceSectionProps) => {
         <h2 className="apple-heading text-4xl md:text-5xl text-center mb-16">Professional Journey</h2>
         
         <div className="space-y-40 mb-20">
-          {data.work.map((job, index) => {
+          {data.jobs.map((job, index) => {
             const startDate = new Date(job.startDate).getFullYear();
-            const endDate = job.endDate === "Present" ? job.endDate : new Date(job.endDate).getFullYear();
+            const endDate = job.endDate ? new Date(job.endDate).getFullYear() : "Present";
             
             return (
               <div 
@@ -51,8 +50,8 @@ const ExperienceSection = ({ data }: ExperienceSectionProps) => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                   <div className={`${index % 2 === 0 ? 'order-1' : 'order-1 md:order-2'}`}>
                     <span className="text-primary font-medium">{startDate} - {endDate}</span>
-                    <h3 className="apple-heading text-3xl md:text-4xl mb-3">{job.position}</h3>
-                    <h4 className="apple-subheading text-xl text-gray-600 mb-6">{job.company}</h4>
+                    <h3 className="apple-heading text-3xl md:text-4xl mb-3">{job.title}</h3>
+                    <h4 className="apple-subheading text-xl text-gray-600 mb-6">{job.company.name}</h4>
                     <p className="apple-text text-gray-600 mb-6">{job.summary}</p>
                     
                     <ul className="space-y-3">
@@ -70,9 +69,11 @@ const ExperienceSection = ({ data }: ExperienceSectionProps) => {
                       <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl transform rotate-3"></div>
                       <div className="absolute inset-0 border border-primary/20 rounded-xl transform -rotate-3"></div>
                       <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="w-24 h-24 rounded-full bg-white shadow-xl flex items-center justify-center font-bold text-2xl text-primary">
-                          {job.company.charAt(0)}
-                        </div>
+                        <img 
+                          src={job.company.image || `https://placehold.co/400x400/e2e8f0/1e293b?text=${encodeURIComponent(job.company.name)}`}
+                          alt={`${job.company.name} logo`}
+                          className="w-48 h-48 object-cover rounded-xl shadow-xl"
+                        />
                       </div>
                     </div>
                   </div>

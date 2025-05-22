@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { ResumeData } from "../data/resumeData";
 
@@ -25,10 +24,10 @@ const Header = ({ data }: HeaderProps) => {
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         <div className="flex items-center space-x-2">
           <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center overflow-hidden">
-            <span className="text-white font-bold">{data.basics.name.charAt(0)}</span>
+            <span className="text-white font-bold">{data.name.charAt(0)}</span>
           </div>
           <span className={`font-display font-medium transition-all duration-300 ${scrolled ? "text-primary" : "text-foreground"}`}>
-            {data.basics.name.split(" ")[0]}
+            {data.name.split(" ")[0]}
           </span>
         </div>
         

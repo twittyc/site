@@ -60,6 +60,7 @@ let virgosvs =
     , url = Some "https://virgosvs.com"
     , location = sd
     , defunct = False
+    , image = Some "https://raw.githubusercontent.com/twittyc/site/main/public/images/companies/virgosvs.png"
     }
 
 let gremlin =
@@ -68,6 +69,7 @@ let gremlin =
     , url = Some "https://gremlin.com"
     , location = sf
     , defunct = False
+    , image = Some "https://raw.githubusercontent.com/twittyc/site/main/public/images/companies/gremlin.png"
     }
 
 let onica =
@@ -76,6 +78,7 @@ let onica =
     , url = Some "https://www.rackspace.com"
     , location = sa
     , defunct = True
+    , image = Some "https://raw.githubusercontent.com/twittyc/site/main/public/images/companies/onica.png"
     }
 
 let rival =
@@ -83,6 +86,7 @@ let rival =
     , name = "Rival labs, inc."
     , location = la
     , defunct = True
+    , image = Some "https://raw.githubusercontent.com/twittyc/site/main/public/images/companies/rival.webp"
     }
 
 let swa =
@@ -91,6 +95,7 @@ let swa =
     , url = Some "https://www.southwest.com"
     , location = dal
     , defunct = False
+    , image = Some "https://raw.githubusercontent.com/twittyc/site/main/public/images/companies/swa.webp"
     }
 
 let cern =
@@ -99,6 +104,7 @@ let cern =
     , url = Some "https://www.oracle.com/health/"
     , location = kc
     , defunct = True
+    , image = Some "https://raw.githubusercontent.com/twittyc/site/main/public/images/companies/cern.png"
     }
 
 in [ Job::{

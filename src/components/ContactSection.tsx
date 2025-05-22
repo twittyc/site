@@ -1,4 +1,3 @@
-
 import { ResumeData } from "../data/resumeData";
 import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
@@ -40,12 +39,18 @@ const ContactSection = ({ data }: ContactSectionProps) => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // In a real app, you'd send this data to a backend
-    console.log({ name, email, message });
+    
+    const subject = `Message from ${name}`;
+    const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
+    const mailtoLink = `mailto:cory@twitty.codes?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    
+    window.open(mailtoLink, '_blank');
+    
     toast({
-      title: "Message sent",
-      description: "Thank you for your message. I'll get back to you soon!",
+      title: "Email client opened",
+      description: "Your default email client should open with the message pre-filled.",
     });
+    
     setName("");
     setEmail("");
     setMessage("");
@@ -65,49 +70,35 @@ const ContactSection = ({ data }: ContactSectionProps) => {
               <h3 className="apple-subheading text-2xl mb-6">Contact Information</h3>
               
               <div className="space-y-6">
+                {data.location && (
+                  <div className="flex items-start">
+                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mr-4">
+                      <span className="text-primary">📍</span>
+                    </div>
+                    <div>
+                      <h4 className="font-medium">Location</h4>
+                      <p>{data.location.city}, {data.location.stateOrProvince}, {data.location.country}</p>
+                    </div>
+                  </div>
+                )}
+                
                 <div className="flex items-start">
                   <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mr-4">
-                    <span className="text-primary">📧</span>
+                    <span className="text-primary">💼</span>
                   </div>
                   <div>
-                    <h4 className="font-medium">Email</h4>
-                    <a href={`mailto:${data.basics.email}`} className="text-primary hover:underline">
-                      {data.basics.email}
-                    </a>
+                    <h4 className="font-medium">Current Role</h4>
+                    <p>{data.title}</p>
                   </div>
                 </div>
                 
                 <div className="flex items-start">
                   <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mr-4">
-                    <span className="text-primary">📱</span>
+                    <span className="text-primary">🏢</span>
                   </div>
                   <div>
-                    <h4 className="font-medium">Phone</h4>
-                    <a href={`tel:${data.basics.phone}`} className="text-primary hover:underline">
-                      {data.basics.phone}
-                    </a>
-                  </div>
-                </div>
-                
-                <div className="flex items-start">
-                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mr-4">
-                    <span className="text-primary">🌐</span>
-                  </div>
-                  <div>
-                    <h4 className="font-medium">Website</h4>
-                    <a href={data.basics.url} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
-                      {data.basics.url.replace("https://", "")}
-                    </a>
-                  </div>
-                </div>
-                
-                <div className="flex items-start">
-                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mr-4">
-                    <span className="text-primary">📍</span>
-                  </div>
-                  <div>
-                    <h4 className="font-medium">Location</h4>
-                    <p>{data.basics.location.city}, {data.basics.location.countryCode}</p>
+                    <h4 className="font-medium">Current Company</h4>
+                    <p>{data.jobs[0]?.company.name}</p>
                   </div>
                 </div>
               </div>
