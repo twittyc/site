@@ -28,7 +28,7 @@ jobs:
       - name: Build with Nix
         run: |
           nix develop --command bash -c '
-            dhall-to-json --file src/dhall/render/site.dhall > src/data/resume.json
+            dhall-to-json --file dhall/render/site.dhall > src/data/resume.json
             npm ci
             npm run build
           '

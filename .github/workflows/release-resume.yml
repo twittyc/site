@@ -18,14 +18,18 @@ jobs:
       - name: Setup Nix
         uses: DeterminateSystems/nix-installer-action@main
 
-      - name: Build resume PDF
-        run: nix build .#resume
-
-      - name: Create Release
-        id: create_release
-        uses: softprops/action-gh-release@v2.2.2
-        with:
-          files: result/resume.pdf
-          generate_release_notes: true
+      - name: Build and Release Resume
+        run: |
+          nix develop --command bash -c '
+            # Generate the resume PDF
+            dhall text --file dhall/render/resume.dhall > resume.tex
+            cp dhall/render/developercv.cls .
+            pdflatex -interaction=nonstopmode resume.tex
+            pdflatex -interaction=nonstopmode resume.tex
+          '
+          # Create the release
+          gh release create "resume-$(date +%Y%m%d)" \
+          --generate-notes \
+          resume.pdf
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
