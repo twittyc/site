@@ -90,7 +90,8 @@ let contributions =
         \(link : Link.Type) ->
             ''
             \entry{}{${link.title}}{}{\begin{itemize}
-                \item \href{${link.url}}{${link.description}}
+                \item ${link.description}
+                \item[] \textcolor{blue}{\faIcon{external-link-alt} \url{${link.url}}}
             \end{itemize}}
             ''
 

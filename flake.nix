@@ -66,41 +66,11 @@
           '';
         };
 
-        # Website build derivation
-        website = pkgs.stdenv.mkDerivation {
-          name = "website";
-          src = ./.;
-          
-          buildInputs = with pkgs; [
-            nodejs_20
-            nodePackages.npm
-            dhall
-            dhall-json
-          ];
-
-          buildPhase = ''
-            # Create src/data directory if it doesn't exist
-            mkdir -p src/data
-
-            # Generate resume.json from dhall
-            ${pkgs.dhall-json}/bin/dhall-to-json --file $src/dhall/render/site.dhall > src/data/resume.json
-
-            # Install dependencies and build
-            npm install
-            npm run build
-          '';
-
-          installPhase = ''
-            mkdir -p $out
-            cp -r dist/* $out/
-          '';
-        };
-
       in
       {
         packages = {
-          inherit resume website;
-          default = website;
+          inherit resume;
+          default = resume;
         };
 
         devShells.default = pkgs.mkShell {
@@ -133,7 +103,6 @@
             echo "🚀 Development environment loaded!"
             echo "Run 'npm run dev' to start the development server"
             echo "Run 'nix build .#resume' to generate your resume PDF"
-            echo "Run 'nix build .#website' to build the website"
           '';
         };
       }
