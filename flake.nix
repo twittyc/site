@@ -43,10 +43,10 @@
             cd $TMPDIR/resume
 
             # Extract complete LaTeX document directly from Dhall
-            ${pkgs.dhall}/bin/dhall text --file $src/dhall/latex/resume.dhall > resume.tex
+            ${pkgs.dhall}/bin/dhall text --file $src/dhall/render/resume.dhall > resume.tex
             
             # Copy LaTeX class file
-            cp $src/dhall/latex/developercv.cls .
+            cp $src/dhall/render/developercv.cls .
             
             # Compile LaTeX to PDF
             for i in 1 2 3; do
