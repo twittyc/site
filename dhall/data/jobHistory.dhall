@@ -60,7 +60,7 @@ let virgosvs =
     , url = Some "https://virgosvs.com"
     , location = sd
     , defunct = False
-    , image = Some "https://raw.githubusercontent.com/twittyc/site/main/public/images/companies/virgosvs.png"
+    , image = Some "https://raw.githubusercontent.com/twittyc/site/main/public/images/companies/virgosvs.webp"
     }
 
 let gremlin =
@@ -78,7 +78,7 @@ let onica =
     , url = Some "https://www.rackspace.com"
     , location = sa
     , defunct = True
-    , image = Some "https://raw.githubusercontent.com/twittyc/site/main/public/images/companies/onica.png"
+    , image = Some "https://raw.githubusercontent.com/twittyc/site/main/public/images/companies/onica.webp"
     }
 
 let rival =

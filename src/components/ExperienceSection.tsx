@@ -72,7 +72,7 @@ const ExperienceSection = ({ data }: ExperienceSectionProps) => {
                         <img 
                           src={job.company.image || `https://placehold.co/400x400/e2e8f0/1e293b?text=${encodeURIComponent(job.company.name)}`}
                           alt={`${job.company.name} logo`}
-                          className="w-48 h-48 object-cover rounded-xl shadow-xl"
+                          className="w-48 h-48 object-contain p-4 rounded-xl shadow-xl"
                         />
                       </div>
                     </div>
