@@ -2,8 +2,8 @@ result
 .env
 .env.local
 site/public/data
-# src/data/resume.json
-# src/data/site.json
+src/data/resume.json
+src/data/site.json
 
 # Logs
 logs
