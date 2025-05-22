@@ -49,7 +49,7 @@ const ProjectsSection = ({ data }: ProjectsSectionProps) => {
               >
                 <div className="bg-gradient-to-r from-blue-600 to-purple-600 h-3"></div>
                 <div className="p-8">
-                  <h3 className="apple-heading text-2xl mb-4">{contribution.title}</h3>
+                  <h3 className="apple-heading text-2xl mb-4 text-gray-900 dark:text-white">{contribution.title}</h3>
                   <p className="text-gray-600 mb-6">{contribution.description}</p>
                   
                   <Button asChild variant="outline" className="mt-2">
