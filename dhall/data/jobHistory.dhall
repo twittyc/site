@@ -167,7 +167,7 @@ in [ Job::{
     , endDate = Some "2019-09"
     , leaveReason = Some "New opportunity"
     , locations = [ dal ]
-    , summary = "At Southwest Airlines, I acted as Kubernetes SME during a major infrastructure modernization effort; mentored dev teams on containerzation best practices and led knowledge sharing during EKS rollout across 9 environments. In addition, I introduced SLO-based monitoring and instituted a postmortem culture, enhancing incident learnign and service accountability."
+    , summary = "At Southwest Airlines, I acted as Kubernetes SME during a major infrastructure modernization effort; mentored dev teams on containerzation best practices and led knowledge sharing during EKS rollout across 9 environments. In addition, I introduced SLO-based monitoring and instituted a postmortem culture, enhancing incident learning and service accountability."
   }
   , Job::{
     , company = cern
