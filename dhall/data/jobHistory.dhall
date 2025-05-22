@@ -112,7 +112,7 @@ in [ Job::{
     , title = "Senior DevOps Engineer"
     , contract = False
     , startDate = "2024-01"
-    , endDate = Some "2024-01"
+    , endDate = Some "Present"
     , leaveReason = Some "Company Closure"
     , locations = [ sd ]
     , highlights = 
