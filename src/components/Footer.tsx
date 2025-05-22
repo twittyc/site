@@ -1,4 +1,5 @@
 import { ResumeData } from "../data/resumeData";
+import { Github, Linkedin, Mail } from "lucide-react";
 
 interface FooterProps {
   data: ResumeData;
@@ -10,12 +11,33 @@ const Footer = ({ data }: FooterProps) => {
   return (
     <footer className="bg-gray-900 text-white py-12">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div>
             <h3 className="font-display font-bold text-lg mb-4">{data.name}</h3>
-            <p className="text-gray-300 mb-4">
-              {data.summary.substring(0, 120)}...
-            </p>
+            <div className="flex space-x-4">
+              <a 
+                href="https://github.com/twittyc" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-300 hover:text-white transition-colors"
+              >
+                <Github size={24} />
+              </a>
+              <a 
+                href="https://www.linkedin.com/in/cory-twitty-58b24969/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-300 hover:text-white transition-colors"
+              >
+                <Linkedin size={24} />
+              </a>
+              <a 
+                href="mailto:cory@twitty.dev" 
+                className="text-gray-300 hover:text-white transition-colors"
+              >
+                <Mail size={24} />
+              </a>
+            </div>
           </div>
           
           <div>

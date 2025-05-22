@@ -32,9 +32,9 @@ const ExperienceSection = ({ data }: ExperienceSectionProps) => {
   }, []);
 
   return (
-    <section id="experience" className="py-20">
+    <section id="experience" className="py-20 bg-background">
       <div className="container mx-auto px-4">
-        <h2 className="apple-heading text-4xl md:text-5xl text-center mb-16">Professional Journey</h2>
+        <h2 className="apple-heading text-4xl md:text-5xl text-center mb-16 text-foreground relative z-10">Professional Journey</h2>
         
         <div className="space-y-40 mb-20">
           {data.jobs.map((job, index) => {

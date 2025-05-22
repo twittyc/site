@@ -71,9 +71,9 @@ const SkillsSection = ({ data }: SkillsSectionProps) => {
   }
 
   return (
-    <section id="skills" className="py-20 bg-gradient-to-b from-white to-blue-50">
+    <section id="skills" className="py-20 bg-gradient-to-b from-background to-background/80">
       <div className="container mx-auto px-4">
-        <h2 className="apple-heading text-4xl md:text-5xl text-center mb-16">Skills & Expertise</h2>
+        <h2 className="apple-heading text-4xl md:text-5xl text-center mb-16 text-foreground">Skills & Expertise</h2>
         
         <div 
           ref={sectionRef}
@@ -83,17 +83,17 @@ const SkillsSection = ({ data }: SkillsSectionProps) => {
             {Object.entries(skillCategories).map(([category, skills], index) => (
               <div 
                 key={index}
-                className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow"
+                className="bg-card rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow border border-border"
               >
-                <h3 className="apple-heading text-xl mb-6">{category}</h3>
+                <h3 className="apple-heading text-xl mb-6 text-foreground">{category}</h3>
                 <div className="space-y-4">
                   {skills.map((skill, i) => (
                     <div key={i} className="space-y-2">
                       <div className="flex justify-between items-center">
-                        <span className="font-medium">{skill.name}</span>
-                        <span className="text-sm text-gray-500">{skill.rating}%</span>
+                        <span className="font-medium text-foreground">{skill.name}</span>
+                        <span className="text-sm text-muted-foreground">{skill.rating}%</span>
                       </div>
-                      <div className="h-2 w-full bg-gray-200 rounded-full overflow-hidden">
+                      <div className="h-2 w-full bg-muted rounded-full overflow-hidden">
                         <div 
                           className="h-full bg-primary rounded-full transition-all duration-1000" 
                           style={{ width: `${skill.rating}%` }}

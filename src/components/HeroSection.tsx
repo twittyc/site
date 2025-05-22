@@ -16,7 +16,7 @@ const HeroSection = ({ data }: HeroSectionProps) => {
 
   return (
     <section id="about" className="min-h-screen relative flex flex-col items-center justify-center">
-      <div className="parallax-bg bg-gradient-to-b from-blue-50 to-white" />
+      <div className="parallax-bg bg-gradient-to-b from-background to-background/80" />
       
       <div className="container mx-auto px-4 relative z-10">
         <div className={`text-center transition-all duration-1000 ${visible ? "opacity-100 transform translate-y-0" : "opacity-0 transform translate-y-10"}`}>
@@ -29,13 +29,13 @@ const HeroSection = ({ data }: HeroSectionProps) => {
               />
             </div>
           </div>
-          <h1 className="apple-heading text-5xl md:text-7xl lg:text-8xl mb-4">{data.name}</h1>
+          <h1 className="apple-heading text-5xl md:text-7xl lg:text-8xl mb-4 text-foreground">{data.name}</h1>
           
           <div className="h-px w-24 bg-primary mx-auto my-6"></div>
           
-          <h2 className="apple-subheading text-2xl md:text-3xl text-gray-600 mb-6">{data.title}</h2>
+          <h2 className="apple-subheading text-2xl md:text-3xl text-muted-foreground mb-6">{data.title}</h2>
           
-          <p className="apple-text max-w-2xl mx-auto text-gray-600 mb-12">
+          <p className="apple-text max-w-2xl mx-auto text-muted-foreground mb-12">
             {data.summary}
           </p>
           

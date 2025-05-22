@@ -53,6 +53,7 @@ export interface ResumeData {
   summary: string;
   title: string;
   location?: Location;
+  contact: Contact;
 }
 
 // Transform the JSON data to match our interface
@@ -65,7 +66,17 @@ const transformData = (data: any): ResumeData => {
     headshot: data.headshot,
     summary: data.summary,
     title: data.title,
-    location: data.location
+    location: data.location,
+    contact: {
+      email: data.contact?.email || "cory@twitty.codes",
+      phone: data.contact?.phone || "(555) 555-5555",
+      location: data.contact?.location || "Denver, CO",
+      social: {
+        github: data.contact?.social?.github,
+        linkedin: data.contact?.social?.linkedin,
+        twitter: data.contact?.social?.twitter
+      }
+    }
   };
 };
 
