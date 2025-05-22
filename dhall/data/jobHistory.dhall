@@ -116,12 +116,10 @@ in [ Job::{
     , leaveReason = Some "Company Closure"
     , locations = [ sd ]
     , highlights = 
-        [ "Fully automated the CI/CD pipeline for all 15 service repositories and our Terraform infrastructure, reducing deployment time and minimizing production deployment risks."
-        , "Built bespoke certificate management service to create a secured, centralized authority for inter-service and field device certificate management; reducing cost, configuration and deployment complexity. (Python, Golang)"
-        , "Updated service code to implement zero-trust security best practices, strengthening authentication and access control, which reduced security vulnerabilities and enhanced compliance readiness. (Python, Golang)"
-        , "Deployed production services across multiple global regions, reducing latency and improving application availability for international users while also ensuring compliance with country-specific data residency and regulatory requirements."
-        , "Automated certificate rotation and introduced ephemeral certificates, strengthening security and reducing manual intervention, lowering the risk of expired or compromised credentials."
-        , "Leveraged Nix to standardize developer environments, cutting onboarding time allowing new engineers to contribute faster and reducing setup inconsistencies."
+        [ "Designed and implemented a ratio-based alerting system integrated with Prometheus and Grafana, enabling adaptive SLO-based monitoring that scaled with system growth and reduced false positives."
+        , "Led zero-trust architecture rollout across global deployments, including automation of ephemeral certificate rotation and inter-service authentication."
+        , "Established a standardized monitoring and observability framework adopted across 15+ services, ensuring consistent telemetry and enabling faster MTTR."
+        , "Championed reproducible dev environments using Nix, significantly reducing onboarding friction and config drift."
         ]
     }
   , Job::{
@@ -133,8 +131,10 @@ in [ Job::{
     , leaveReason = Some "Mass Layoffs"
     , locations = [ sf ]
     , highlights = 
-        [ "Designed and implemented cgroup v2 support for Gremlin machine agents improving resource isolation and ensuring compatibility with modern Linux distributions. (Rust)"
-        , "Redesigned a high-throughput and spikey DynamoDB table, reducing write costs by 30-45 percent for some customers, improving performance and lowering operational expenses."
+        [  "Led internal chaos engineering initiatives by dogfooding our own product, conducting regular game days against production to uncover reliability gaps and validate failure handling."
+        , "Designed and implemented cgroup v2 support for Gremlin machine agents, improving resource isolation and ensuring compatibility with modern Linux distributions. (Rust)"
+        , "Developed and implemented internal SLOs and SLIs to measure system reliability, enabling data-driven incident response and service improvement tracking."
+        , "Redesigned a high-throughput and spikey DynamoDB table, reducing write costs by 30–45% for some customers, improving performance and lowering operational expenses."
         , "Separated staging and production environments into isolated AWS accounts with no downtime, aligning with AWS Well-Architected best practices and enhancing security."
         , "Migrated CloudFormation stacks into Terraform without redeploying resources, simplifying infrastructure as code and improving maintainability."
         ]
@@ -147,7 +147,7 @@ in [ Job::{
     , endDate = Some "2021-03"
     , leaveReason = Some "Misalignment"
     , locations = [ sa ]
-    , summary = "At Onica, I developed custom Python plugins to streamline Istio service mesh deployment, simplifying service integration and reducing manual effort. I designed and tested CloudFormation templates using Troposphere, ensuring scalable and consistent infrastructure provisioning. Additionally, I contributed to the Troposphere OSS project, improving automation reliability, and containerized development environments with Docker to enhance reproducibility and accelerate developer onboarding."
+    , summary = "At Onica, I served as a trusted advisor and mentor to client engineering teams, guiding them through complex challenges in Istio integration, observability strategy, and large-scale Kubernetes cluster management. I developed custom Python plugins to streamline Istio service mesh deployment, simplifying service integration and reducing manual effort. I designed and tested CloudFormation templates using Troposphere, ensuring scalable and consistent infrastructure provisioning. I also contributed to the Troposphere OSS project, improving automation reliability, and containerized development environments with Docker to enhance reproducibility and accelerate developer onboarding."
   }
   , Job::{
     , company = rival
@@ -167,7 +167,7 @@ in [ Job::{
     , endDate = Some "2019-09"
     , leaveReason = Some "New opportunity"
     , locations = [ dal ]
-    , summary = "At Southwest Airlines, I managed and deployed EKS clusters across nine environments, serving as the Kubernetes subject matter expert and educating teams on best practices. I redesigned the logging architecture to dynamically scale with demand, handling peak bursts of 13GB/s of logs. I implemented Prometheus monitoring and alerting, enabling teams to self-service observability, and exposed custom Prometheus metrics to Kubernetes for HPA-based autoscaling. Additionally, I developed an automated recovery pipeline using AWS Lambda, reducing downtime by triggering corrective actions before escalation. To enhance reliability, I introduced post-mortems and SLO-based monitoring, fostering a proactive approach to incident management and service quality."
+    , summary = "At Southwest Airlines, I acted as Kubernetes SME during a major infrastructure modernization effort; mentored dev teams on containerzation best practices and led knowledge sharing during EKS rollout across 9 environments. In addition, I introduced SLO-based monitoring and instituted a postmortem culture, enhancing incident learnign and service accountability."
   }
   , Job::{
     , company = cern
@@ -177,6 +177,6 @@ in [ Job::{
     , endDate = Some "2018-10"
     , leaveReason = Some "New Opportunity"
     , locations = [ kc ]
-    , summary = "At Cerner, I designed and deployed a globally available Artifactory repository across hybrid AWS and on-prem environments, leveraging Ansible automation for consistent builds and deployments. I implemented auto-scaling groups in AWS, integrating with CloudWatch monitoring to dynamically scale EC2 instances based on demand. To enhance security and reliability, I deployed high-availability HashiCorp Vault instances with a Consul backend on Kubernetes and automated etcd backups to S3. Additionally, I introduced CI/CD best practices, authored Kubernetes and containerization documentation, and conducted training sessions on Ansible automation and Git flow. I also streamlined bare metal server provisioning, reducing deployment time from three weeks to just 30 minutes through automation."
+    , summary = "At Cerner, I led the charge toward modern cloud deployment practices, introducing Kubernetes to the organization and authoring internal documentation to support its adoption. I drove CI/CD best practices, helping teams transition from manual deployments to automated pipelines, and conducted training sessions on Git workflows and infrastructure automation with Ansible. I deployed high-availability HashiCorp Vault clusters on Kubernetes backed by Consul, automated etcd backups to S3, and implemented autoscaling groups with CloudWatch triggers to dynamically scale infrastructure. My efforts in streamlining bare metal server provisioning reduced deployment times from weeks to minutes, dramatically increasing operational efficiency."
   }
 ]

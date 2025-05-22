@@ -23,6 +23,8 @@ in { name = author.name
         , Buzzword::{ name = "Kubernetes", rating = 90 }
         , Buzzword::{ name = "CI/CD", rating = 100 }
         , Buzzword::{ name = "Terraform", rating = 100 }
+        , Buzzword::{ name = "Prometheus", rating = 100 }
+        , Buzzword::{ name = "Grafana", rating = 100 }
         , Buzzword::{ name = "DevOps", rating = 100 }
         , Buzzword::{ name = "Continuous Integration", rating = 100 }
         , Buzzword::{ name = "Continuous Delivery", rating = 100 }
