@@ -58,7 +58,7 @@ const ExperienceSection = ({ data }: ExperienceSectionProps) => {
                       {job.highlights.map((highlight, i) => (
                         <li key={i} className="flex items-start">
                           <span className="text-primary mr-2">•</span>
-                          <span>{highlight}</span>
+                          <span className="text-muted-foreground">{highlight}</span>
                         </li>
                       ))}
                     </ul>

@@ -33,9 +33,9 @@ const HeroSection = ({ data }: HeroSectionProps) => {
           
           <div className="h-px w-24 bg-primary mx-auto my-6"></div>
           
-          <h2 className="apple-subheading text-2xl md:text-3xl text-muted-foreground mb-6">{data.title}</h2>
+          <h2 className="apple-subheading text-2xl md:text-3xl text-foreground mb-6">{data.title}</h2>
           
-          <p className="apple-text max-w-2xl mx-auto text-muted-foreground mb-12">
+          <p className="apple-text max-w-2xl mx-auto text-foreground mb-12">
             {data.summary}
           </p>
           
