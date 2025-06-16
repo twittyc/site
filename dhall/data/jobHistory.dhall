@@ -116,10 +116,14 @@ in [ Job::{
     , leaveReason = Some "Company Closure"
     , locations = [ sd ]
     , highlights = 
-        [ "Designed and implemented a ratio-based alerting system integrated with Prometheus and Grafana, enabling adaptive SLO-based monitoring that scaled with system growth and reduced false positives."
-        , "Led zero-trust architecture rollout across global deployments, including automation of ephemeral certificate rotation and inter-service authentication."
-        , "Established a standardized monitoring and observability framework adopted across 15+ services, ensuring consistent telemetry and enabling faster MTTR."
-        , "Championed reproducible dev environments using Nix, significantly reducing onboarding friction and config drift."
+        [ "Reduced SLO false-positive alerts by 65% by architecting a scalable ratio-based alerting framework using Prometheus and Grafana."
+        , "Created a Docker image factory to monitor upstream image updates and CVEs, triggering multi-stage rebuilds to patch vulnerabilities automatically; reduced patch turnaround time by 80%."
+        , "Standardized local development environments using Nix and maintained onboarding documentation in Confluence, reducing time-to-productivity for new hires by 50% when setting up their IDE."
+        , "Led zero-trust rollout across multi-region GKE clusters, automating ephemeral certificate rotation, improving inter-service auth security posture."
+        , "Created observability standards, cutting MTTR by 50% and enabling actionable telemetry adoption."
+        , "Led engineering and platform initiatives for SOC 2 compliance, remediating CVEs across all production workloads and maintaining continuous security posture via automated scanning and alerting."
+        , "Rolled out Pub/Sub integration for the endoml.ai service, enabling decoupled service communication and scalable async processing; throughput increased by 35% under peak load."
+        , "Developed robust monitoring for Pub/Sub service using Prometheus, tracking key metrics such as: backlog growth rate, message processing latency, and publish volume."
         ]
     }
   , Job::{
@@ -131,12 +135,11 @@ in [ Job::{
     , leaveReason = Some "Mass Layoffs"
     , locations = [ sf ]
     , highlights = 
-        [  "Led internal chaos engineering initiatives by dogfooding our own product, conducting regular game days against production to uncover reliability gaps and validate failure handling."
-        , "Designed and implemented cgroup v2 support for Gremlin machine agents, improving resource isolation and ensuring compatibility with modern Linux distributions. (Rust)"
-        , "Developed and implemented internal SLOs and SLIs to measure system reliability, enabling data-driven incident response and service improvement tracking."
-        , "Redesigned a high-throughput and spikey DynamoDB table, reducing write costs by 30–45% for some customers, improving performance and lowering operational expenses."
+        [ "Conducted production chaos tests that uncovered failure scenarios, reducing unplanned downtime and increasing system resilience."
+        , "Decreased agent CPU/memory contention by 50% via custom cgroup v2 isolation (Rust), ensuring compatibility with modern Linux distributions."
+        , "Reduced AWS DynamoDB write costs by ~45% by redesigning spike-heavy tables to better accommodate high-throughput workloads."
+        , "Hardened IaC practices by migrating from CloudFormation to Terraform with zero downtime, improving deployment maintainability."
         , "Separated staging and production environments into isolated AWS accounts with no downtime, aligning with AWS Well-Architected best practices and enhancing security."
-        , "Migrated CloudFormation stacks into Terraform without redeploying resources, simplifying infrastructure as code and improving maintainability."
         ]
     }
   , Job::{
@@ -147,7 +150,11 @@ in [ Job::{
     , endDate = Some "2021-03"
     , leaveReason = Some "Misalignment"
     , locations = [ sa ]
-    , summary = "At Onica, I served as a trusted advisor and mentor to client engineering teams, guiding them through complex challenges in Istio integration, observability strategy, and large-scale Kubernetes cluster management. I developed custom Python plugins to streamline Istio service mesh deployment, simplifying service integration and reducing manual effort. I designed and tested CloudFormation templates using Troposphere, ensuring scalable and consistent infrastructure provisioning. I also contributed to the Troposphere OSS project, improving automation reliability, and containerized development environments with Docker to enhance reproducibility and accelerate developer onboarding."
+    , highlights =
+        [ "Guided enterprise Kubernetes rollouts with Istio service mesh integration."
+        , "Standardized infrastructure deployment using Troposphere-tested CloudFormation templates, increasing reproducibility and deployment confidence by 70%."
+        , "Containerized dev environments with Docker, accelerating team onboarding and reducing setup-related support tickets by 60%."
+        ]
   }
   , Job::{
     , company = rival
@@ -157,7 +164,11 @@ in [ Job::{
     , endDate = Some "2020-06"
     , leaveReason = Some "Company Closure"
     , locations = [ la ]
-    , summary = "At Rival Labs, I collaborated with application owners to define Service Level Objectives (SLOs) and Service Level Indicators (SLIs), improving visibility into service reliability. I developed SLO dashboards to track uptime and performance, integrated Datadog event logging, and implemented proactive monitoring and alerting to enhance system observability. I also advocated for continuous delivery and feature flag adoption, enabling safer and faster deployments. Additionally, I contributed to Terraform infrastructure, patching upstream provider bugs, improving internal modules, and automating cloud deployments."
+    , highlights = 
+        [ "Implemented Datadog-based SLO dashboards and alerting for Kinesis-backed pipelines, reducing incident detection time by 40%."
+        , "Advocated for and implemented progressive delivery with feature flags, reducing production rollback frequency by 10%."
+        , "Optimized Terraform modules and patched upstream provider bugs, improving module reliability and CI pipeline pass rate by 25%."
+        ]
   }
   , Job::{
     , company = swa
@@ -167,7 +178,12 @@ in [ Job::{
     , endDate = Some "2019-09"
     , leaveReason = Some "New opportunity"
     , locations = [ dal ]
-    , summary = "At Southwest Airlines, I acted as Kubernetes SME during a major infrastructure modernization effort; mentored dev teams on containerzation best practices and led knowledge sharing during EKS rollout across 9 environments. In addition, I introduced SLO-based monitoring and instituted a postmortem culture, enhancing incident learning and service accountability."
+    , highlights = 
+        [ "Spearheaded EKS adoption across 9 environments, mentoring 10+ dev teams and reducing container onboarding time by 35%."
+        , "Embedded SLO-driven monitoring and postmortem culture across teams, leading to 25% fewer repeat incidents."
+        , "Architected and maintained robust CI/CD pipelines across multiple orgs (Jenkins, GitHub Actions), incorporating automated tests, integration validation, user acceptance via Cypress, and inline security scanning; improved deployment frequency by 3x while maintaining reliability."
+        , "Standardized Docker build pipelines using multi-stage builds; reduced image sizes by 40% and improved build caching, cutting CI cycle times by 30%."
+        ]
   }
   , Job::{
     , company = cern
@@ -177,6 +193,11 @@ in [ Job::{
     , endDate = Some "2018-10"
     , leaveReason = Some "New Opportunity"
     , locations = [ kc ]
-    , summary = "At Cerner, I led the charge toward modern cloud deployment practices, introducing Kubernetes to the organization and authoring internal documentation to support its adoption. I drove CI/CD best practices, helping teams transition from manual deployments to automated pipelines, and conducted training sessions on Git workflows and infrastructure automation with Ansible. I deployed high-availability HashiCorp Vault clusters on Kubernetes backed by Consul, automated etcd backups to S3, and implemented autoscaling groups with CloudWatch triggers to dynamically scale infrastructure. My efforts in streamlining bare metal server provisioning reduced deployment times from weeks to minutes, dramatically increasing operational efficiency."
+    , highlights = 
+        [ "Reduced bare-metal provisioning time from weeks to minutes via PXE boot and Ansible automation."
+        , "Deployed HA Vault clusters and automated etcd backups to S3, increasing secrets durability and disaster recovery readiness by 3x."
+        , "Transitioned teams from manual deployments to CI/CD pipelines, improving deployment frequency by 4x."
+        , "Designed and deployed hybrid Kubernetes federation between on-prem and Azure-based clusters to support regional failover and compliance-driven data locality."
+        ]
   }
 ]
