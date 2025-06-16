@@ -1,6 +1,5 @@
 
 import { useEffect } from "react";
-import Banner from "@/components/Banner";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import ExperienceSection from "@/components/ExperienceSection";
