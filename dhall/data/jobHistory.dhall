@@ -116,13 +116,13 @@ in [ Job::{
     , leaveReason = Some "Company Closure"
     , locations = [ sd ]
     , highlights = 
-        [ "Reduced SLO false-positive alerts by 65% by architecting a scalable ratio-based alerting framework using Prometheus and Grafana."
-        , "Created a Docker image factory to monitor upstream image updates and CVEs, triggering multi-stage rebuilds to patch vulnerabilities automatically; reduced patch turnaround time by 80%."
-        , "Standardized local development environments using Nix and maintained onboarding documentation in Confluence, reducing time-to-productivity for new hires by 50% when setting up their IDE."
+        [ "Reduced SLO false-positive alerts by 65 percent by architecting a scalable ratio-based alerting framework using Prometheus and Grafana."
+        , "Created a Docker image factory to monitor upstream image updates and CVEs, triggering multi-stage rebuilds to patch vulnerabilities automatically; reduced patch turnaround time by 80 percent."
+        , "Standardized local development environments using Nix and maintained onboarding documentation in Confluence, reducing time-to-productivity for new hires by 50 percent when setting up their IDE."
         , "Led zero-trust rollout across multi-region GKE clusters, automating ephemeral certificate rotation, improving inter-service auth security posture."
-        , "Created observability standards, cutting MTTR by 50% and enabling actionable telemetry adoption."
+        , "Created observability standards, cutting MTTR by 50 percent and enabling actionable telemetry adoption."
         , "Led engineering and platform initiatives for SOC 2 compliance, remediating CVEs across all production workloads and maintaining continuous security posture via automated scanning and alerting."
-        , "Rolled out Pub/Sub integration for the endoml.ai service, enabling decoupled service communication and scalable async processing; throughput increased by 35% under peak load."
+        , "Rolled out Pub/Sub integration for the endoml.ai service, enabling decoupled service communication and scalable async processing; throughput increased by 35 percent under peak load."
         , "Developed robust monitoring for Pub/Sub service using Prometheus, tracking key metrics such as: backlog growth rate, message processing latency, and publish volume."
         ]
     }
@@ -136,8 +136,8 @@ in [ Job::{
     , locations = [ sf ]
     , highlights = 
         [ "Conducted production chaos tests that uncovered failure scenarios, reducing unplanned downtime and increasing system resilience."
-        , "Decreased agent CPU/memory contention by 50% via custom cgroup v2 isolation (Rust), ensuring compatibility with modern Linux distributions."
-        , "Reduced AWS DynamoDB write costs by ~45% by redesigning spike-heavy tables to better accommodate high-throughput workloads."
+        , "Decreased agent CPU/memory contention by 50 percent via custom cgroup v2 isolation (Rust), ensuring compatibility with modern Linux distributions."
+        , "Reduced AWS DynamoDB write costs by ~45 percent by redesigning spike-heavy tables to better accommodate high-throughput workloads."
         , "Hardened IaC practices by migrating from CloudFormation to Terraform with zero downtime, improving deployment maintainability."
         , "Separated staging and production environments into isolated AWS accounts with no downtime, aligning with AWS Well-Architected best practices and enhancing security."
         ]
@@ -152,8 +152,8 @@ in [ Job::{
     , locations = [ sa ]
     , highlights =
         [ "Guided enterprise Kubernetes rollouts with Istio service mesh integration."
-        , "Standardized infrastructure deployment using Troposphere-tested CloudFormation templates, increasing reproducibility and deployment confidence by 70%."
-        , "Containerized dev environments with Docker, accelerating team onboarding and reducing setup-related support tickets by 60%."
+        , "Standardized infrastructure deployment using Troposphere-tested CloudFormation templates, increasing reproducibility and deployment confidence by 70 percent."
+        , "Containerized dev environments with Docker, accelerating team onboarding and reducing setup-related support tickets by 60 percent."
         ]
   }
   , Job::{
@@ -165,9 +165,9 @@ in [ Job::{
     , leaveReason = Some "Company Closure"
     , locations = [ la ]
     , highlights = 
-        [ "Implemented Datadog-based SLO dashboards and alerting for Kinesis-backed pipelines, reducing incident detection time by 40%."
-        , "Advocated for and implemented progressive delivery with feature flags, reducing production rollback frequency by 10%."
-        , "Optimized Terraform modules and patched upstream provider bugs, improving module reliability and CI pipeline pass rate by 25%."
+        [ "Implemented Datadog-based SLO dashboards and alerting for Kinesis-backed pipelines, reducing incident detection time by 40 percent."
+        , "Advocated for and implemented progressive delivery with feature flags, reducing production rollback frequency by 10 percent."
+        , "Optimized Terraform modules and patched upstream provider bugs, improving module reliability and CI pipeline pass rate by 25 percent."
         ]
   }
   , Job::{
@@ -179,10 +179,10 @@ in [ Job::{
     , leaveReason = Some "New opportunity"
     , locations = [ dal ]
     , highlights = 
-        [ "Spearheaded EKS adoption across 9 environments, mentoring 10+ dev teams and reducing container onboarding time by 35%."
-        , "Embedded SLO-driven monitoring and postmortem culture across teams, leading to 25% fewer repeat incidents."
+        [ "Spearheaded EKS adoption across 9 environments, mentoring 10+ dev teams and reducing container onboarding time by 35 percent."
+        , "Embedded SLO-driven monitoring and postmortem culture across teams, leading to 25 percent fewer repeat incidents."
         , "Architected and maintained robust CI/CD pipelines across multiple orgs (Jenkins, GitHub Actions), incorporating automated tests, integration validation, user acceptance via Cypress, and inline security scanning; improved deployment frequency by 3x while maintaining reliability."
-        , "Standardized Docker build pipelines using multi-stage builds; reduced image sizes by 40% and improved build caching, cutting CI cycle times by 30%."
+        , "Standardized Docker build pipelines using multi-stage builds; reduced image sizes by 40 percent and improved build caching, cutting CI cycle times by 30 percent."
         ]
   }
   , Job::{
