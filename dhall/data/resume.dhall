@@ -21,21 +21,21 @@ in Resume::{
   , buzzwords = [
         , Buzzword::{ name = "Rust", rating = 65 }
         , Buzzword::{ name = "PostgreSQL", rating = 65 }
-        , Buzzword::{ name = "TypeScript", rating = 70 }
         , Buzzword::{ name = "Go", rating = 70 }
         , Buzzword::{ name = "Python", rating = 70 }
         , Buzzword::{ name = "Git", rating = 80 }
         , Buzzword::{ name = "Dhall", rating = 80 }
         , Buzzword::{ name = "Nix", rating = 80 }
-        , Buzzword::{ name = "Cloud", rating = 90 }
-        , Buzzword::{ name = "Kubernetes", rating = 90 }
+        , Buzzword::{ name = "AWS", rating = 90 }
+        , Buzzword::{ name = "GCP", rating = 90 }
+        , Buzzword::{ name = "Azure", rating = 90 }
+        , Buzzword::{ name = "Kubernetes", rating = 100 }
         , Buzzword::{ name = "CI/CD", rating = 100 }
         , Buzzword::{ name = "Terraform", rating = 100 }
         , Buzzword::{ name = "Prometheus", rating = 100 }
         , Buzzword::{ name = "Grafana", rating = 100 }
         , Buzzword::{ name = "DevOps", rating = 100 }
-        , Buzzword::{ name = "Continuous Integration", rating = 100 }
-        , Buzzword::{ name = "Continuous Delivery", rating = 100 }
+        , Buzzword::{ name = "Agile", rating = 100 }
   ]
   , jobs = jobHistory
   , notableContributions = [
