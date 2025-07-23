@@ -111,19 +111,20 @@ in [ Job::{
     , company = virgosvs
     , title = "Senior DevOps Engineer"
     , contract = False
-    , startDate = "2024-01"
+    , startDate = "2023-01"
     , endDate = Some "Present"
     , leaveReason = Some "Company Closure"
     , locations = [ sd ]
     , highlights = 
-        [ "Reduced SLO false-positive alerts by 65 percent by architecting a scalable ratio-based alerting framework using Prometheus and Grafana."
-        , "Created a Docker image factory to monitor upstream image updates and CVEs, triggering multi-stage rebuilds to patch vulnerabilities automatically; reduced patch turnaround time by 80 percent."
-        , "Standardized local development environments using Nix and maintained onboarding documentation in Confluence, reducing time-to-productivity for new hires by 50 percent when setting up their IDE."
+        [ "Fully automated the CI/CD pipeline for all 15 service repositories and our Terraform infrastructure, reducing deployment time and minimizing production deployment risks.",
+        , "Built bespoke certificate management service to create a secured, centralized authority for inter-service and field device certificate management; reducing cost, configuration and deployment complexity. (Python, Golang)"
+        , "Updated service code to implement zero-trust security best practices, strengthening authentication and access control, which reduced security vulnerabilities and enhanced compliance readiness. (Python, Golang)"
         , "Led zero-trust rollout across multi-region GKE clusters, automating ephemeral certificate rotation, improving inter-service auth security posture."
-        , "Created observability standards, cutting MTTR by 50 percent and enabling actionable telemetry adoption."
+        , "Deployed production services across multiple global regions, reducing latency and improving application availability for international users while also ensuring compliance with country-specific data residency and regulatory requirements."
         , "Led engineering and platform initiatives for SOC 2 compliance, remediating CVEs across all production workloads and maintaining continuous security posture via automated scanning and alerting."
         , "Rolled out Pub/Sub integration for the endoml.ai service, enabling decoupled service communication and scalable async processing; throughput increased by 35 percent under peak load."
         , "Developed robust monitoring for Pub/Sub service using Prometheus, tracking key metrics such as: backlog growth rate, message processing latency, and publish volume."
+        , "Leveraged Nix to standardize developer environments, cutting onboarding time allowing new engineers to contribute faster and reducing setup inconsistencies."
         ]
     }
   , Job::{
@@ -135,8 +136,7 @@ in [ Job::{
     , leaveReason = Some "Mass Layoffs"
     , locations = [ sf ]
     , highlights = 
-        [ "Conducted production chaos tests that uncovered failure scenarios, reducing unplanned downtime and increasing system resilience."
-        , "Decreased agent CPU/memory contention by 50 percent via custom cgroup v2 isolation (Rust), ensuring compatibility with modern Linux distributions."
+        [ "Designed and implemented cgroup v2 support for Gremlin machine agents improving resource isolation and ensuring compatibility with modern Linux distributions. (Rust)"
         , "Reduced AWS DynamoDB write costs by ~45 percent by redesigning spike-heavy tables to better accommodate high-throughput workloads."
         , "Hardened IaC practices by migrating from CloudFormation to Terraform with zero downtime, improving deployment maintainability."
         , "Separated staging and production environments into isolated AWS accounts with no downtime, aligning with AWS Well-Architected best practices and enhancing security."
@@ -154,6 +154,7 @@ in [ Job::{
         [ "Guided enterprise Kubernetes rollouts with Istio service mesh integration."
         , "Standardized infrastructure deployment using Troposphere-tested CloudFormation templates, increasing reproducibility and deployment confidence by 70 percent."
         , "Containerized dev environments with Docker, accelerating team onboarding and reducing setup-related support tickets by 60 percent."
+        , "Designed a 1000+ node Kubernetes cluster upgrade rollout during a 3 hour downtime window."
         ]
   }
   , Job::{
@@ -179,10 +180,10 @@ in [ Job::{
     , leaveReason = Some "New opportunity"
     , locations = [ dal ]
     , highlights = 
-        [ "Spearheaded EKS adoption across 9 environments, mentoring 10+ dev teams and reducing container onboarding time by 35 percent."
-        , "Embedded SLO-driven monitoring and postmortem culture across teams, leading to 25 percent fewer repeat incidents."
+        [ "Spearheaded EKS adoption across 9 environments, mentoring 10+ dev teams."
+        , "Embedded SLO-driven monitoring and postmortem culture across teams, leading to faster incident response."
         , "Architected and maintained robust CI/CD pipelines across multiple orgs (Jenkins, GitHub Actions), incorporating automated tests, integration validation, user acceptance via Cypress, and inline security scanning; improved deployment frequency by 3x while maintaining reliability."
-        , "Standardized Docker build pipelines using multi-stage builds; reduced image sizes by 40 percent and improved build caching, cutting CI cycle times by 30 percent."
+        , "Standardized Docker build pipelines using multi-stage builds and image factories; reduced image sizes by 40 percent and improved build caching, cutting CI cycle times by 30 percent."
         ]
   }
   , Job::{
