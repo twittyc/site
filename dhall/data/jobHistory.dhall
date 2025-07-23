@@ -116,14 +116,13 @@ in [ Job::{
     , leaveReason = Some "Company Closure"
     , locations = [ sd ]
     , highlights =  
-        [ "Fully automated the CI/CD pipeline for all 15 service repositories and our Terraform infrastructure, reducing deployment time and minimizing production deployment risks."
+        [ "Fully automated the CI/CD pipeline for all 30 service repositories and our Terraform infrastructure, reducing deployment time and minimizing production deployment risks."
         , "Built bespoke certificate management service to create a secured, centralized authority for inter-service and field device certificate management; reducing cost, configuration and deployment complexity. (Python, Golang)"
         , "Updated service code to implement zero-trust security best practices, strengthening authentication and access control, which reduced security vulnerabilities and enhanced compliance readiness. (Python, Golang)"
         , "Led zero-trust rollout across multi-region GKE clusters, automating ephemeral certificate rotation, improving inter-service auth security posture."
         , "Deployed production services across multiple global regions, reducing latency and improving application availability for international users while also ensuring compliance with country-specific data residency and regulatory requirements."
         , "Led engineering and platform initiatives for SOC 2 compliance, remediating CVEs across all production workloads and maintaining continuous security posture via automated scanning and alerting."
         , "Rolled out Pub/Sub integration for the endoml.ai service, enabling decoupled service communication and scalable async processing; throughput increased by 35 percent under peak load."
-        , "Developed robust monitoring for Pub/Sub service using Prometheus, tracking key metrics such as: backlog growth rate, message processing latency, and publish volume."
         , "Leveraged Nix to standardize developer environments, cutting onboarding time allowing new engineers to contribute faster and reducing setup inconsistencies."
         ]
     }

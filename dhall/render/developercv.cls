@@ -190,7 +190,7 @@
 		#1 % Leftmost entry date(s) text
 	}%
 	\hfill
-	&\parbox[t]{0.75\textwidth}{% 75% of the text width of the page
+	&\parbox[t]{0.85\textwidth}{% 85% of the text width of the page
 		\textbf{#2}% Entry heading text
 		\hfill% Horizontal whitespace
 		{\footnotesize \textbf{\textcolor{black}{#3}}}\\% Right-aligned entry qualifier text
