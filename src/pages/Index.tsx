@@ -31,7 +31,6 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Banner /> {}
       <Header data={resumeData} />
       <HeroSection data={resumeData} />
       <ExperienceSection data={resumeData} />
