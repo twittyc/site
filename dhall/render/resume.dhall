@@ -220,9 +220,8 @@ in  ''
     %	EXPERIENCE
     %----------------------------------------------------------------------------------------
 
-    \cvsect{Experience}
-
     \begin{entrylist}
+        \cvsect{Experience}
     	${jobHistory}
     \end{entrylist}
 
