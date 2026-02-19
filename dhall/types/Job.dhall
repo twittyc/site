@@ -2,6 +2,10 @@ let Company = ./Company.dhall
 
 let Location = ./Location.dhall
 
+let Role = ./Role.dhall
+
+let RoleTaggedHighlight = ./RoleTaggedHighlight.dhall
+
 in  { Type =
         { company : Company.Type
         , title : Text
@@ -14,6 +18,8 @@ in  { Type =
         , locations : List Location.Type
         , summary: Text
         , highlights : List Text
+        , roleTaggedHighlights : List RoleTaggedHighlight.Type
+        , roleTags : List Role.Type
         , hideFromResume : Bool
         }
     , default =
@@ -28,6 +34,8 @@ in  { Type =
       , locations = [] : List Location.Type
       , summary = ""
       , highlights = [] : List Text
+      , roleTaggedHighlights = [] : List RoleTaggedHighlight.Type
+      , roleTags = [] : List Role.Type
       , hideFromResume = False
       }
     }

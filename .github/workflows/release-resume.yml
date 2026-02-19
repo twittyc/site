@@ -21,15 +21,28 @@ jobs:
       - name: Build and Release Resume
         run: |
           nix develop --command bash -c '
-            # Generate the resume PDF
-            dhall text --file dhall/render/resume.dhall > resume.tex
             cp dhall/render/developercv.cls .
-            pdflatex -interaction=nonstopmode resume.tex || true
-            pdflatex -interaction=nonstopmode resume.tex || true
+
+            build_resume() {
+              local render_file="$1"
+              local output_name="$2"
+
+              dhall text --file "$render_file" > "${output_name}.tex"
+              pdflatex -interaction=nonstopmode -halt-on-error "${output_name}.tex"
+              pdflatex -interaction=nonstopmode -halt-on-error "${output_name}.tex"
+            }
+
+            build_resume dhall/render/resume.dhall resume
+            build_resume dhall/render/resume.sre.dhall resume-sre
+            build_resume dhall/render/resume.platform-engineer.dhall resume-platform-engineer
+            build_resume dhall/render/resume.cloud-devops.dhall resume-cloud-devops
           '
           # Create the release using the tag name
           gh release create "${GITHUB_REF#refs/tags/}" \
             --generate-notes \
-            resume.pdf
+            resume.pdf \
+            resume-sre.pdf \
+            resume-platform-engineer.pdf \
+            resume-cloud-devops.pdf
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 

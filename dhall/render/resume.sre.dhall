@@ -2,4 +2,4 @@ let render = ./resume.template.dhall
 
 let variants = ../data/variants.dhall
 
-in  render variants.master
+in  render variants.sre

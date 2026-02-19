@@ -23,7 +23,8 @@
             xcolor
             pgf
             textpos
-            raleway;
+            raleway
+            ly1;
         };
 
         # Resume generation derivation
@@ -42,27 +43,36 @@
             mkdir -p $TMPDIR/resume
             cd $TMPDIR/resume
 
-            # Extract complete LaTeX document directly from Dhall
-            ${pkgs.dhall}/bin/dhall text --file $src/dhall/render/resume.dhall > resume.tex
-            
             # Copy LaTeX class file
             cp $src/dhall/render/developercv.cls .
-            
-            # Compile LaTeX to PDF
-            for i in 1 2 3; do
-              pdflatex -interaction=nonstopmode resume.tex || true
+
+            build_resume() {
+              local render_file="$1"
+              local output_name="$2"
+
+              ${pkgs.dhall}/bin/dhall text --file "$render_file" > "$output_name.tex"
+
+              for i in 1 2 3; do
+                pdflatex -interaction=nonstopmode -halt-on-error "$output_name.tex"
+              done
+            }
+
+            build_resume "$src/dhall/render/resume.dhall" "resume"
+            build_resume "$src/dhall/render/resume.sre.dhall" "resume-sre"
+            build_resume "$src/dhall/render/resume.platform-engineer.dhall" "resume-platform-engineer"
+            build_resume "$src/dhall/render/resume.cloud-devops.dhall" "resume-cloud-devops"
+
+            for file in resume.pdf resume-sre.pdf resume-platform-engineer.pdf resume-cloud-devops.pdf; do
+              if [ ! -f "$file" ]; then
+                echo "Failed to generate $file"
+                exit 1
+              fi
             done
-            
-            # Check if PDF was generated
-            if [ ! -f resume.pdf ]; then
-              echo "Failed to generate PDF"
-              exit 1
-            fi
           '';
 
           installPhase = ''
             mkdir -p $out
-            cp $TMPDIR/resume/resume.pdf $out/
+            cp $TMPDIR/resume/resume*.pdf $out/
           '';
         };
 
@@ -102,7 +112,7 @@
             npm install
             echo "🚀 Development environment loaded!"
             echo "Run 'npm run dev' to start the development server"
-            echo "Run 'nix build .#resume' to generate your resume PDF"
+            echo "Run 'nix build .#resume' to generate your master and variant resume PDFs"
           '';
         };
       }

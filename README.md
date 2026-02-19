@@ -26,9 +26,15 @@ This project uses a unique architecture that combines several powerful technolog
 
 ### Output Formats
 1. **LaTeX Resume**
-   - Generates a professional PDF resume
+   - Generates a master PDF resume plus role-specific variants
+   - Variants are selected from a tagged master data model for:
+     - SRE
+     - Platform Engineer
+     - Cloud Engineer / DevOps
    - Uses a custom LaTeX template
    - Build with: `nix build .#resume`
+   - Master data file: `dhall/data/masterResume.dhall`
+   - Variant selector file: `dhall/data/variants.dhall`
 
 2. **React Website**
    - Modern web interface built with Vite + React
@@ -58,6 +64,11 @@ This project uses a unique architecture that combines several powerful technolog
   ```bash
   nix build .#resume
   ```
+  Output PDFs are written to the Nix build result directory:
+  - `resume.pdf` (master)
+  - `resume-sre.pdf`
+  - `resume-platform-engineer.pdf`
+  - `resume-cloud-devops.pdf`
 - Build the website:
   ```bash
   npm run build

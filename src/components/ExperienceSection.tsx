@@ -7,6 +7,18 @@ interface ExperienceSectionProps {
 
 const ExperienceSection = ({ data }: ExperienceSectionProps) => {
   const sectionRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  const formatYear = (value?: string | null, fallback: string = "Present") => {
+    if (!value) return fallback;
+
+    const parsed = new Date(value);
+    if (!Number.isNaN(parsed.getTime())) {
+      return parsed.getFullYear().toString();
+    }
+
+    const matchedYear = value.match(/\d{4}/);
+    return matchedYear ? matchedYear[0] : value;
+  };
   
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -38,8 +50,8 @@ const ExperienceSection = ({ data }: ExperienceSectionProps) => {
         
         <div className="space-y-40 mb-20">
           {data.jobs.map((job, index) => {
-            const startDate = new Date(job.startDate).getFullYear();
-            const endDate = job.endDate ? new Date(job.endDate).getFullYear() : "Present";
+            const startDate = formatYear(job.startDate, "");
+            const endDate = formatYear(job.endDate, "Present");
             
             return (
               <div 

@@ -8,6 +8,7 @@ import resumeJson from './resume.json';
 interface Buzzword {
   name: string;
   rating: number;
+  roleTags?: string[];
 }
 
 interface Location {
@@ -28,11 +29,12 @@ interface Company {
 interface Job {
   company: Company;
   contract: boolean;
-  endDate: string;
+  endDate?: string | null;
   hideFromResume: boolean;
   highlights: string[];
-  leaveReason: string;
+  leaveReason?: string | null;
   locations: Location[];
+  roleTags?: string[];
   startDate: string;
   summary: string;
   title: string;
@@ -44,25 +46,44 @@ interface NotableContribution {
   url: string;
 }
 
+interface ContactSocial {
+  github?: string | null;
+  linkedin?: string | null;
+  twitter?: string | null;
+}
+
+interface ContactInfo {
+  email: string;
+  phone: string;
+  location: string;
+  social: ContactSocial;
+}
+
 export interface ResumeData {
   buzzwords: Buzzword[];
   jobs: Job[];
   name: string;
   notableContributions: NotableContribution[];
-  headshot: string;
+  headshot?: string;
   summary: string;
   title: string;
   location?: Location;
-  contact: Contact;
+  contact: ContactInfo;
 }
 
 // Transform the JSON data to match our interface
 const transformData = (data: any): ResumeData => {
+  const jobs: Job[] = (data.jobs || []).map((job: any) => ({
+    ...job,
+    highlights: Array.isArray(job.highlights) ? job.highlights : [],
+    summary: job.summary || ""
+  }));
+
   return {
-    buzzwords: data.buzzwords,
-    jobs: data.jobs,
+    buzzwords: data.buzzwords || [],
+    jobs,
     name: data.name,
-    notableContributions: data.notableContributions,
+    notableContributions: data.notableContributions || [],
     headshot: data.headshot,
     summary: data.summary,
     title: data.title,

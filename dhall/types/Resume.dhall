@@ -9,6 +9,7 @@ let Buzzword = ./Buzzword.dhall
 in  { Type =
         { name : Text
         , tagline : Text
+        , summary : Text
         , location : Location.Type
         , buzzwords : List Buzzword.Type
         , notableContributions : List Link.Type
@@ -17,6 +18,7 @@ in  { Type =
     , default =
       { name = "Cory Twitty"
       , tagline = "Senior DevOps Engineer"
+      , summary = ""
       , location = Location::{
         , city = "Denver"
         , stateOrProvince = "CO"
